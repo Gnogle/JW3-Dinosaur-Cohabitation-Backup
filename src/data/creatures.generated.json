@@ -1,7 +1,7 @@
 {
   "meta": {
     "sourceFile": "JW3 Dino Habitat Planner.xlsx",
-    "sha256": "ea780ebe05f80ee3e9bdf34a286051ff03809cf2d8ece630be9a800faac16eec"
+    "sha256": "50fa58922d2933985f3fb4d7c8f93d3333e910c727d6b250fb1845a1696d1713"
   },
   "workbook": {
     "creatures": [
@@ -6928,6 +6928,89 @@
         }
       },
       {
+        "id": "Land:83",
+        "name": "Aquilops",
+        "nameKey": "aquilops",
+        "category": "Land",
+        "sourceRow": 83,
+        "diet": "Herbivore",
+        "era": "Early Cretaceous",
+        "size": "Small",
+        "likes": [
+          "Chasmosaurus",
+          "Lokiceratops",
+          "Microceratus",
+          "Nasutoceratops",
+          "Pachyrhinosaurus",
+          "Pentaceratops",
+          "Protoceratops",
+          "Sinoceratops",
+          "Styracosaurus",
+          "Torosaurus",
+          "Triceratops"
+        ],
+        "dislikes": [
+          "Tyrannosaurus Rex",
+          "Giganotosaurus",
+          "Allosaurus",
+          "Carnotaurus",
+          "Velociraptor",
+          "Atrociraptor",
+          "Deinonychus",
+          "Pyroraptor",
+          "Utahraptor",
+          "Dilophosaurus",
+          "Concavenator",
+          "Acrocanthosaurus",
+          "Carcharodontosaurus",
+          "Albertosaurus",
+          "Metriacanthosaurus",
+          "Proceratosaurus",
+          "Yutyrannus",
+          "Oviraptor",
+          "Guanlong",
+          "Dimetrodon",
+          "Baryonyx",
+          "Ceratosaurus",
+          "Coelophysis",
+          "Compsognathus",
+          "Herrerasaurus",
+          "Indominus Rex",
+          "Moros Intrepidus",
+          "Qianzhousaurus",
+          "Spinosaurus",
+          "Suchomimus",
+          "Troodon",
+          "Caiuajara",
+          "Dimorphodon",
+          "Geosternbergia",
+          "Pteranodon",
+          "Quetzalcoatlus",
+          "Tapejara",
+          "Thanatosdrakon",
+          "Tropeognathus",
+          "Indoraptor",
+          "Scorpios Rex",
+          "Spinoraptor"
+        ],
+        "habitat": {
+          "arid": null,
+          "barren": null,
+          "cover": null,
+          "pasture": 0.51,
+          "wetland": null,
+          "water": 0.16,
+          "deep water": null,
+          "ground leaf": null,
+          "ground fiber": 0.19,
+          "ground fruit": null,
+          "ground nut": 0.14,
+          "tall leaf": null,
+          "tall fiber": null,
+          "tall fruit": null
+        }
+      },
+      {
         "id": "Aviary:2",
         "name": "Dimorphodon",
         "nameKey": "dimorphodon",
@@ -7265,7 +7348,7 @@
       {
         "name": "Land",
         "category": "Land",
-        "creatureCount": 81,
+        "creatureCount": 82,
         "habitatFields": [
           "arid",
           "barren",
