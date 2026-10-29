@@ -3,7 +3,7 @@ import { cleanText, normalizeKey } from './text';
 import { HABITAT_FIELDS, habitatLabel } from './workbook';
 
 /** GitHub repository that receives report issues. */
-export const REPORT_REPOSITORY = 'Gnogle/JW3-Dinosaur-Cohabitation';
+export const REPORT_REPOSITORY = 'Gnogle/JW3-Dinosaur-Cohabitation-Backup';
 
 /** Raw form entries keyed by habitat field key. An empty string means no value was entered. */
 export type HabitatEntries = Record<string, string>;

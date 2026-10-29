@@ -7,6 +7,7 @@ import { ReportDialog } from './components/ReportDialog';
 import { loadWorkbookData } from './data/loadWorkbookData';
 import type { GeneratedWorkbook } from './domain/model';
 import { recommendForCreature } from './domain/recommend';
+import { REPORT_REPOSITORY } from './domain/report';
 import { buildIndex } from './domain/tokens';
 
 type LoadState =
@@ -67,6 +68,11 @@ function Shell({ children, headerAction }: { children: ReactNode; headerAction?:
         </p>
         {children}
       </main>
+      <footer className="app-footer">
+        <a href={`https://github.com/${REPORT_REPOSITORY}`} target="_blank" rel="noreferrer">
+          View source on GitHub
+        </a>
+      </footer>
     </>
   );
 }
