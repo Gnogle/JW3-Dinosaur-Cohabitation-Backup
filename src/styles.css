@@ -1,0 +1,496 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.45;
+  --border: #c9ced6;
+  --muted: #5b6470;
+  --accent: #1d5fbf;
+  --card-bg: #ffffff;
+  --page-bg: #f4f6f9;
+  --focus: #ffb000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border: #3a414d;
+    --muted: #aab3bf;
+    --accent: #7fb2ff;
+    --card-bg: #1b1f26;
+    --page-bg: #111418;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.app-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.intro {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.category {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.muted,
+.hint {
+  color: var(--muted);
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.formula {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.note {
+  font-size: 0.92rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.6rem;
+}
+
+/* Combobox */
+.combobox {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  max-width: 420px;
+}
+
+.combobox label {
+  font-weight: 600;
+}
+
+.combobox input {
+  font: inherit;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: inherit;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 260px;
+  overflow-y: auto;
+  margin: 0.25rem 0 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.options[hidden] {
+  display: none;
+}
+
+.option {
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.option-active,
+.option:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.facts dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.token-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.token-name {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.token-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Report panel */
+.report-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.report-type button,
+.report-footer button {
+  font: inherit;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: inherit;
+  cursor: pointer;
+}
+
+.report-type button[aria-pressed='true'],
+.report-footer button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.report-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.report-select {
+  display: grid;
+  gap: 0.3rem;
+  max-width: 420px;
+}
+
+.report-select label,
+.report-field label {
+  font-weight: 600;
+}
+
+.report-check {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.report-check label {
+  font-weight: 600;
+}
+
+.report-select input,
+.report-select select,
+.report-field input {
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: inherit;
+}
+
+.report-fields {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.report-fields legend {
+  font-weight: 600;
+  padding: 0 0.3rem;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.6rem 1rem;
+}
+
+.report-field {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.report-footer {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+}
+
+.report-errors {
+  color: #b42318;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.report-preview {
+  white-space: pre-wrap;
+  font-size: 0.85rem;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem;
+  overflow-x: auto;
+}
+
+.report-dialog {
+  width: min(720px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: inherit;
+}
+
+.report-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.report-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.report-dialog-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.header-action,
+.report-dialog-header button,
+.add-correction,
+.correction-row button {
+  font: inherit;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: inherit;
+  cursor: pointer;
+}
+
+.header-action {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.report-section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.report-subheading {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.current-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.4rem 1rem;
+  margin: 0;
+}
+
+.current-values > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.2rem;
+}
+
+.current-values dt {
+  color: var(--muted);
+}
+
+.current-values dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.correction-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.correction-row .report-select {
+  flex: 1 1 180px;
+}
+
+.correction-action {
+  display: grid;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.add-correction {
+  justify-self: start;
+}
+
+.habitat-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.match + .match {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--border);
+}
+
+.habitat-column h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.habitat-list {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+}
+
+.habitat-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.habitat-list dt {
+  color: var(--muted);
+}
+
+.habitat-list dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  font-size: 0.92rem;
+}
+
+caption {
+  text-align: left;
+  color: var(--muted);
+  padding-bottom: 0.3rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+@media (max-width: 600px) {
+  .candidate-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .habitat-compare {
+    grid-template-columns: 1fr;
+  }
+}

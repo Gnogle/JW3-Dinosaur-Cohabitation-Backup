@@ -1,0 +1,30 @@
+{
+  "name": "jw3-dino-habitat-planner",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Recommends the best-matching liked creature by habitat similarity, using the JW3 Dino Habitat Planner workbook as the data source.",
+  "type": "module",
+  "scripts": {
+    "data": "tsx scripts/generate-data.ts",
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
